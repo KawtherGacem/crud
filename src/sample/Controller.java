@@ -62,9 +62,8 @@ public class Controller  {
         tabname.setCellValueFactory(new PropertyValueFactory<Clients , String>("name"));
         tabid.setCellValueFactory(new PropertyValueFactory<Clients , Integer>("id"));
         tabnbachats.setCellValueFactory(new PropertyValueFactory<Clients , Integer>("nbachats"));
-        tabclients.setItems(clients);
+        tabclients.setItems(getclients());
     }
-    ObservableList<Clients> clients = getclients();
 
 
      public ObservableList<Clients> getclients(){
@@ -91,7 +90,6 @@ public class Controller  {
     }
 
 
-
       //@FXML public void btninsert(ActionEvent event){
       // clients.add(new Clients(tfname.getText(),Integer.parseInt(tfid.getText()),Integer.parseInt(tfnbachats.getText())));
      // }
@@ -104,7 +102,7 @@ public class Controller  {
           }catch (Exception ex){
               System.out.println(ex.getMessage());
 //              ex.printStackTrace();
-              System.out.println("gjygjy");
+              System.out.println("maranich nakhdem");
           }
       }
     public void btninsert(ActionEvent event) {
@@ -129,6 +127,19 @@ public class Controller  {
              e.printStackTrace();
              System.out.println(e.getMessage());
          }
+    }
+    public void btndelete (ActionEvent event){
+        try {
+            Clients clients= tabclients.getSelectionModel().getSelectedItem();
+            String query = " DELETE FROM clients where id ="+clients.getId();
+            Statement st = connect().prepareStatement(query);
+            st.executeQuery(query);
+            showclients();
+
+        }catch (Exception e){
+           e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 
 
