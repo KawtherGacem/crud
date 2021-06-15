@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.purchase_entry.PurchaseEntryController">
+   <children>
+      <BorderPane maxWidth="1920.0" prefHeight="1080.0" prefWidth="1920.0">
+         <center>
+            <AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="invoicesTableView" maxHeight="-Infinity" maxWidth="1395.0" prefHeight="294.0" prefWidth="1395.0" style="-fx-background-color: #EBEBEB;" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="44.0">
+                      <placeholder>
+                          <Label />
+                      </placeholder>
+                    <columns>
+                        <TableColumn fx:id="invoiceIdCol" prefWidth="279.0" style="-fx-alignment: CENTER;" text="ID" />
+                      <TableColumn fx:id="dateOfPurchaseCol" prefWidth="279.0" style="-fx-alignment: CENTER;" text="Date of Purchase" />
+                        <TableColumn fx:id="supplierCol" prefWidth="279.0" style="-fx-alignment: CENTER;" text="Supplier" />
+                    </columns>
+                  </TableView>
+                  <VBox layoutX="1528.0" layoutY="47.0" prefHeight="292.0" prefWidth="279.0" spacing="59.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="44.0">
+                     <children>
+                        <Button fx:id="addInvoiceBtn" mnemonicParsing="false" onAction="#addInvoiceOnClick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Add Invoice" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="editInvoiceBtn" mnemonicParsing="false" onAction="#editInvoiceOnclick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Edit Invoice" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="editInvoiceBtn1" layoutX="10.0" layoutY="46.0" mnemonicParsing="false" onAction="#editInvoiceOnclick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Edit Invoice" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="productsTableView" layoutX="97.0" layoutY="461.0" maxHeight="294.0" minHeight="294.0" prefHeight="294.0" prefWidth="1395.0" style="-fx-background-color: #EBEBEB;" AnchorPane.bottomAnchor="219.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="415.0">
+                      <placeholder>
+                          <Label />
+                      </placeholder>
+                     <columns>
+                        <TableColumn fx:id="productIdCol" minWidth="0.0" prefWidth="279.0" text="ID" />
+                        <TableColumn fx:id="productCol" prefWidth="279.0" text="Product" />
+                        <TableColumn fx:id="priceOfUnitCol" prefWidth="279.0" text="Price of Unit" />
+                        <TableColumn fx:id="quantityCol" prefWidth="279.0" text="Quantity" />
+                        <TableColumn fx:id="categoryCol" prefWidth="279.0" text="Category" />
+                     </columns>
+                  </TableView>
+                  <VBox layoutX="1602.0" layoutY="471.0" prefHeight="292.0" prefWidth="279.0" spacing="59.0" AnchorPane.rightAnchor="72.0">
+                     <children>
+                        <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#addProductOnClick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Add Product" textFill="WHITE">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="editProductBtn" mnemonicParsing="false" onAction="#editProductOnClick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Edit Product" textFill="WHITE">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteProductBtn" mnemonicParsing="false" onAction="#deleteProductOnClick" prefHeight="58.0" prefWidth="279.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 20px;" text="Delete Product" textFill="WHITE">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="-403.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="94.0" prefWidth="1583.0" style="-fx-background-color: #23B883;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox layoutX="137.0" layoutY="-3.0" prefHeight="94.0" prefWidth="1583.0" spacing="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button minHeight="65.0" minWidth="238.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="238.0" style="-fx-background-color: #23B883; -fx-background-radius: 42.5px; -fx-alignment: center;" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="240.0" top="19.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Roboto" size="36.0" />
+                           </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="250.0" layoutY="31.0" minHeight="65.0" minWidth="164.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="164.0" style="-fx-background-color: #23B883; -fx-background-radius: 42.5px;" text="Selling" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="84.0" top="19.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="488.0" layoutY="31.0" minHeight="65.0" minWidth="159.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #23B883; -fx-background-radius: 42.5px;" text="Stock" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="84.0" top="19.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="726.0" layoutY="10.0" minHeight="65.0" minWidth="224.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="224.0" style="-fx-background-color: #23B883; -fx-background-radius: 42.5px;" text="Suppliers" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="84.0" top="19.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="1162.0" layoutY="31.0" minHeight="58.0" minWidth="236.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="236.0" style="-fx-background-color: #23B883; -fx-background-radius: 42.5px;" text="Customers" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="84.0" top="19.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="1466.0" layoutY="10.0" minHeight="58.0" minWidth="159.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="159.0" style="-fx-background-color: #FFFF; -fx-background-radius: 42.5px;" text="Bills" textAlignment="CENTER" textFill="#23b883">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="54.0" right="195.0" top="19.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" maxHeight="1037.0" maxWidth="469.0" prefHeight="1037.0" prefWidth="469.0" style="-fx-background-color: #0A6B49; -fx-background-radius: 0px 0px 100px 0px;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox maxHeight="1037.0" maxWidth="469.0" prefHeight="1037.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Circle fx:id="imageCircle" fill="DODGERBLUE" radius="105.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;">
+                           <VBox.margin>
+                              <Insets left="127.0" top="61.0" />
+                           </VBox.margin>
+                        </Circle>
+                     </children></VBox>
+                  <Pane prefHeight="44.0" prefWidth="446.0" style="-fx-background-color: #23B883;" AnchorPane.topAnchor="-38.0" />
+                  <Pane fx:id="openSliderPane" maxHeight="1022.66" maxWidth="63.0" minHeight="1022.66" prefHeight="1022.66" prefWidth="63.0" AnchorPane.rightAnchor="0.0" />
+                  <ImageView fx:id="closeSliderTriangle" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" x="15.0" y="485.0" AnchorPane.leftAnchor="429.0">
+                     <image>
+                        <Image url="@../../../../../../Downloads/Polygon%201.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openSliderTriangle" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" rotate="-179.0" x="15.0" y="485.0" AnchorPane.leftAnchor="429.0">
+                     <image>
+                        <Image url="@../../../../../../Downloads/Polygon%201.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="openSliderImage" fitHeight="83.29" fitWidth="86.21" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-20.21" AnchorPane.topAnchor="-38.0">
+                     <image>
+                        <Image url="@Layer%201%20(1).png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="-38.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
